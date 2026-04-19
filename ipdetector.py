@@ -48,12 +48,12 @@ class YandexDiskUploader:
         else:
             print(f'Ошибка: {response.status_code}, {response.json().get('message')}')
 
-    def upload_json_file(self,folder_name, temp_file):
+    def upload_json_file(self, temp_file):
         """загружаем файл в яндекс диск"""
         params = {'path': f'{YD_FOLDER_PATH}/geoinfo.json',
                   'overwrite': True}
         res = requests.get(YD_API_URL, headers=self.headers, params=params)
-        upload_url = requests.get(f'{YD_API_URL}/upload', headers=self.headers, params=params).json().get('href')
+        upload_url = res.json().get('href')
         if upload_url:
             json_as_bytes = json.dumps(temp_file, ensure_ascii=False, indent=4).encode('utf-8')
             temp_file_in_memory = io.BytesIO(json_as_bytes)
@@ -82,7 +82,7 @@ def main():
             geo_ip_info = {'ip': got_ip,
                    'geo': got_geo}
             yd_uploader.create_folder(YD_FOLDER_PATH)
-            yd_uploader.upload_json_file(YD_FOLDER_PATH,geo_ip_info)
+            yd_uploader.upload_json_file(geo_ip_info)
     else:
         print('IP не определен, анонимус!')
 
