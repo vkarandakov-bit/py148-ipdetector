@@ -1,6 +1,6 @@
 yd_token.md
-.gigaide
-.idea
+.gigaide/
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
