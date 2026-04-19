@@ -1,0 +1,15 @@
+{
+    "ip": "46.48.63.42",
+    "geo": {
+        "ip": "46.48.63.42",
+        "hostname": "46.48.63.42-fttb.planeta.tc",
+        "city": "Yekaterinburg",
+        "region": "Sverdlovsk Oblast",
+        "country": "RU",
+        "loc": "56.8573,60.6153",
+        "org": "AS12668 LLC KomTehCentr",
+        "postal": "620000",
+        "timezone": "Asia/Yekaterinburg",
+        "readme": "https://ipinfo.io/missingauth"
+    }
+}
